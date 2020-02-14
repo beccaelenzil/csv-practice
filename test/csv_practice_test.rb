@@ -1,9 +1,8 @@
 # csv_practice_test.rb
-
 require 'minitest'
-require 'minitest/spec'
 require 'minitest/autorun'
 require 'minitest/reporters'
+require 'minitest/skip_dsl'
 require 'minitest/pride'
 require 'pry'
 
@@ -19,6 +18,7 @@ describe "CSV and Enumerables Exercise" do
 
   describe 'get_all_olympic_athletes' do
     it 'returns an array of Olympic athletes hashes with the correct information' do
+
       # Arrange: Nothing to arrange
       #   besides the OLYMPIC_DATA_FILENAME constant variable above
 
@@ -36,6 +36,7 @@ describe "CSV and Enumerables Exercise" do
         # Check that each Olympian hash has the necessary keys
         #   (defined in the constant REQUIRED_OLYMPIAN_FIELDS above)
         expect(athlete.keys.length).must_equal REQUIRED_OLYMPIAN_FIELDS.length
+        #puts "ROF:", REQUIRED_OLYMPIAN_FIELDS[0].class
         REQUIRED_OLYMPIAN_FIELDS.each do |required_field|
           expect(athlete.keys).must_include required_field
         end
@@ -91,7 +92,7 @@ describe "CSV and Enumerables Exercise" do
     end
   end
 
-  describe 'get_all_gold_medalists' do
+  xdescribe 'get_all_gold_medalists' do
     
     it 'returns an array of gold medalists' do
       # Arrange
